@@ -1,357 +1,112 @@
-body
-	{
-	color:#000000;
-	background-color:#e5e5e5;
-	font-family:verdena, sans-serif;
-	}
+/* Container */
+@media(min-width: 1400px){
+    .container {
+        width: 1370px;
+    }
+}
+@media(min-width: 1500px){
+    .container {
+        width: 1470px;
+    }
+}
+@media(min-width: 1600px){
+    .container {
+        width: 1570px;
+    }
+}
+@media(min-width: 1700px){
+    .container {
+        width: 1670px;
+    }
+}
+/* Forum Tables */
 
-td
-	{
-	font-size: 11px;
-	}
+.page-topic td, .page-topic th {
+    padding: 0 8px 4px 0;
+}
 
-td.tooltip
-	{
-	color:#000000;
-	}
+/* Page Logo */
+.page-logo {
+    float: left; 
+    max-height: 45px; 
+    width: auto; 
+    margin-top: -12px;
+}
 
-td.header
-	{
-	width:1000px;
-	height:150px;
-	background-image:url(images/head.gif);
-	}
+/* Navigation */
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #eee;
+}
 
-td.mainbar
-	{
-	width:1000px;
-	height:30px;
-	background-image:url(images/mainbar.gif);
-	}
+.navbar-right~.navbar-right {
+    margin-top: 7px;
+}
 
-td.mainbarlink
-	{
-	padding:0px 20px;
-	height:30px;
-	}
-	
-form
-	{
-	display:inline;
-	}
-	
-a:active, a:visited, a:link
-	{
-	color:#000000;
-	text-decoration:none;
-	font-size:12px;
-	}
-a:hover
-	{
-	color:red;
-	text-decoration:none;
-	font-size:12px;
-	}
+/* Footer */
+.credits-footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 100px;
+    color: #99979c;
+    text-align: center;
+}
 
-a.headlink:active, a.headlink:visited, a.headlink:link
-	{
-	color:#000000;
-	text-decoration:none;
-	font-size:11px;
-	}
-a.headlink:hover
-	{
-	color:red;
-	text-decoration:none;
-	font-size:11px;
-	}
-	
-a.warning:active, a.warning:visited, a.warning:link
-	{
-	color:red;
-	text-decoration:underline;
-	font-size:20px;
-	}
-a.warning:hover
-	{
-	color:#333333;
-	text-decoration:underline;
-	font-size:20px;
-	font-weight:bold;
-	}
-	
-a.mainbarlink:active, a.mainbarlink:visited, a.mainbarlink:link
-	{
-	color:#333333;
-	text-decoration:none;
-	font-size:10px;
-	}
-a.mainbarlink:hover
-	{
-	color:#FF0000;
-	text-decoration:none;
-	font-size:10px;
-	}
-.maincat
-	{
-	background-image:url(images/thead.gif);
-	height:23px;
-	border:1px solid #CDCDCD;
-	color:#000000;
-	text-align:center;
-	}
-.subcat
-	{
-	background:#FFFFFF;
-	border:1px solid #CCCCCC;
-	color:#000000;
-	}
-	
-.left
-	{
-	text-align:left;
-	}
+/* Text Areas */
+.text-area {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    padding: 6px 12px;
+}
 
-.center
-	{
-	text-align:center;
-	}
+.text-area-100 {
+    width: 100%;
+}
 
-.right
-	{
-	text-align:right;
-	}
-td.error
-	{
-	color:#000000; 
-	background-color:#fa8072;
-	border:1px solid black;
-	font-size:14px;
-	}
-td.noerror
-	{
-	color:#000000; 
-	background-color:#33FF99;
-	border:1px solid black;
-	font-size:14px;
-	}
-.login
-	{
-	background-color:#E4EDFB;
-	color:#000000;
-	border:1px solid black;
-	border-radius: 10px;
-	}
-.loginhead
-	{
-	color:#478ADB; 
-	text-shadow: -1px -1px 0px #000000;
-	text-align:center;
-	font-size:25px;
-	}
+/* Sortable List */
+.small-sort-icon {
+    white-space: nowrap;
+}
 
-td.thead
-	{
-	background-image:url(images/thead.gif);
-	color:#000000;
-	text-align:center;
-	border:1px solid #CDCDCD;
-	font-size:14;
-	height:25px;
-	}
+/* Servers Table */
+.srv-btn-size {
+    width: 80px;
+}
 
-td.green1
-	{
-	background-image:url(images/1.gif);
-	height:20px;
-	background:#FFFFFF;
-	border:1px solid #CCCCCC;
-	border-bottom:0px;
-	}
-	
-td.green2
-	{
-	background-image:url(images/2.gif);
-	background:#E4EDFB;
-	height:20px;
-	border:1px solid #CCCCCC;
-	border-bottom:0px;
-	}
+/* Server View Page */
+.srv-controls {
+    float: right;
+    margin-top: -15px;
+    padding-right: 5px;
+}
 
-td.footer
-	{
-	text-align:center;
-	font-size:11px;
-	border-top:1px solid #CCCCCC;
-	}
-	
-table.border
-	{
-	border:1px solid #CCCCCC;
-	border-collapse:collapse;
-	}
+.viewer {
+    width:445px;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 3px;
+}
 
-select
-	{
-	border:1px solid black;
-	border-radius: 5px;
-	}
-	
-textarea
-	{
-	border:1px solid black;
-	border-radius: 5px;
-	}
+/* Icons */
+input.start {
+    border: 0px;
+    width: 16px;
+    height: 16px;
+    background: url(images/start.png);
+}
 
-input
-	{
-	border-radius: 5px;
-	}
+input.delete {
+    border: 0px;
+    width: 16px;
+    height: 16px;
+    background: url(images/delete.png);
+}
 
-input.bild
-	{
-	border:0px;
-	width:168px;
-	height:21px;
-	padding: 5px 5px 0px 5px;
-	background:url(images/input.gif);
-	}
-
-input.start
-	{
-	border:0px;
-	width:16px;
-	height:16px;
-	background:url(images/start.png);
-	}
-	
-input.stop
-	{
-	border:0px;
-	width:16px;
-	height:16px;
-	background:url(images/stop.png);
-	}
-
-input.restart
-	{
-	border:0px;
-	width:16px;
-	height:16px;
-	background:url(images/restart.gif);
-	}
-
-input.view
-	{
-	border:0px;
-	width:16px;
-	height:16px;
-	background:url(images/view.png);
-	}
-	
-input.eperms
-	{
-	border:0px;
-	width:16px;
-	height:16px;
-	background:url(images/eperms.png);
-	}
-	
-input.clients
-	{
-	border:0px;
-	width:16px;
-	height:16px;
-	background:url(images/clients.png);
-	}
-
-input.button
-	{
-	border:1px solid black;
-	height:20px;
-	}
-	
-input.select
-	{
-	border:0px;
-	width:16px;
-	height:16px;
-	background:url(images/select.png);
-	}
-	
-input.delete
-	{
-	border:0px;
-	width:16px;
-	height:16px;
-	background:url(images/delete.png);
-	}
-	
-input.sbutton
-	{
-	border:0px;
-	background:none
-	}
-	
-input
-	{
-	cursor: pointer;
-	background: #FFFFFF;
-	border-left:1px solid gray;
-	border-top:1px solid gray;
-	border-right:1px solid black;
-	border-bottom:1px solid black;
-	}
-
-a.servername:link, a.servername:active, a.servername:visited
-	{
-	font-size:14px;
-	font-style:normal;
-	font-weight:lighter;
-	text-decoration:none;
-	color:#333333;
-	}
-a.servername:hover
-	{
-	font-size:14px;
-	font-style:normal;
-	font-weight:lighter;
-	text-decoration:none;
-	color:#0000FF;
-	}
-a.paging:active, a.paging:visited, a.paging:link
-	{
-	color:#000000;
-	text-decoration:none;
-	font-size:12px;
-	font-weight:bold;
-	}
-a.paging:hover
-	{
-	color:#333333;
-	text-decoration:none;
-	font-size:12px;
-	font-weight:bold;
-	}	
-	
-.warning
-	{
-	color:red;
-	font-size:20px;
-	font-weight:bold;
-	}
-
-.online
-	{
-	color:green;
-	}
-
-.onvirtual
-	{
-	color:orange;
-	}
-	
-.offline
-	{
-	color:red;
-	}
+input.stop {
+    border: 0px;
+    width: 16px;
+    height: 16px;
+    background: url(images/stop.png);
+}

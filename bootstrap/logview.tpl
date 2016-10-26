@@ -1,15 +1,16 @@
 {if isset($permoverview['b_virtualserver_log_view']) AND empty($permoverview['b_virtualserver_log_view'])}
-	<table class="border" style="width:50%;" cellpadding="1" cellspacing="0">
-		<tr>
-			<td class="thead">{$lang['error']}</td>
-		</tr>
-		<tr>
-			<td class="green1">{$lang['nopermissions']}</td>
-		</tr>
-	</table>
+    <div class="col-md-9 col-xs-12">
+        <div class="alert alert-warning">
+            <p>{$lang['error']}: {$lang['nopermissions']}</p>
+        </div>
+    </div>
 {else}
-<br />
-<table class="border" style="width:90%" cellspacing="0" cellpadding="0">
+<div class="col-md-9 col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{$lang['logview']}</h3>
+        </div>
+<table class="table">
 	<tr>
 		<td>
 			<form method="post" action="index.php?site=logview&amp;sid={$sid}">
@@ -18,13 +19,15 @@
 			</form>
 		</td>
 	</tr>
-	<tr>
-		<td style="width:20%" class="thead">{$lang['date']}</td>
-		<td style="width:5%" class="thead">{$lang['level']}</td>
-		<td style="width:10%" class="thead">{$lang['type']}</td>
-		<td style="width:10%" class="thead">{$lang['serverid']}</td>
-		<td style="width:55%" class="thead">{$lang['message']}</td>
-	</tr>
+	<thead>
+        <tr>
+            <th style="width:20%">{$lang['date']}</th>
+            <th style="width:5%">{$lang['level']}</th>
+            <th style="width:10%">{$lang['type']}</th>
+            <th style="width:10%">{$lang['serverid']}</th>
+            <th style="width:55%">{$lang['message']}</th>
+        </tr>
+    </thead>
 
 {if !empty($serverlog)}
 	{foreach key=key item=value from=$serverlog}
@@ -51,4 +54,6 @@
 		</td>
 	</tr>
 </table>
+    </div>
+</div>
 {/if}

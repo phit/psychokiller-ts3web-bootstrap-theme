@@ -1,23 +1,21 @@
 {if $hoststatus === false AND $serverhost === true}
-<table>
-	<tr>
-		<td class="error">{$lang['nohoster']}</td>
-	</tr>
-</table>
+<div class="col-md-9 col-xs-12">
+    <div class="alert alert-warning">
+        <p>{$lang['nohoster']}</p>>
+    </div>
+</div>
 {else}
 {if !empty($error) OR !empty($noerror)}
-<table>
+<div class="col-md-9 col-xs-12">
+    <div class="alert alert-warning">
 	{if !empty($error)}
-	<tr>
-		<td class="error">{$error}</td>
-	</tr>
+        <p>{$error}</p>
 	{/if}
 	{if !empty($noerror)}
-	<tr>
-		<td class="noerror">{$noerror}</td>
-	</tr>
+        <p>{$noerror}</p>
 	{/if}
-</table>
+    </div>
+</div>
 {/if}
 {if !isset($smarty.post.createserver) OR !empty($error)}
 <form method="post" action="index.php?site=createserver">

@@ -1,22 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--
-*Copyright (C) 2012-2013  Psychokiller
-*
-*This program is free software; you can redistribute it and/or modify it under the terms of 
-*the GNU General Public License as published by the Free Software Foundation; either 
-*version 3 of the License, or any later version.
-*
-*This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
-*without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
-*See the GNU General Public License for more details.
-*
-*You should have received a copy of the GNU General Public License along with this program; if not, see http://www.gnu.org/licenses/. 
--->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="de">
+
+<html>
 <head>
 <title>Teamspeak 3 - Webinterface</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 <link rel="stylesheet" href="templates/{$tmpl}/gfx/style.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="templates/{$tmpl}/gfx/tsview.css" type="text/css" media="screen" />
 <script type="text/javascript">
@@ -185,25 +176,19 @@ function confirmAction()
 </script>
 </head>
 <body>
-<table align="center" class="border" style="width:1000px; background-color:#FFFFFF;" cellpadding="1" cellspacing="0">
-	<tr>
-		<td colspan="2">{include file="{$tmpl}/head.tpl"}</td>
-	</tr>
-	{include file="{$tmpl}/showupdate.tpl"}
-	<tr valign="top">	
-		{include file="{$tmpl}/mainbar.tpl"}
-		<td align="center">
-		{include file="{$tmpl}/{$site}.tpl"}
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2" class="footer">
-		{$footer}
-		powered by <a href='http://www.ts-rent.de'>www.TS-Rent.de</a><br />This interface contains images from <a href='http://www.teamspeak.com'>www.teamspeak.com</a>.<br />
-       <a href='http://www.psychoscripts.de/donate.php'><img alt="" border="0" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif" width="86" height="21"></a>
-		</td>
-	</tr>
-</table>
+    {include file="{$tmpl}/head.tpl"}
+<div class="container" id="content">
+    <div class="row">
+    {include file="{$tmpl}/showupdate.tpl"}
+    {include file="{$tmpl}/mainbar.tpl"}
+    {include file="{$tmpl}/{$site}.tpl"}
+    </div>
+</div>
+</main>
+<footer class="credits-footer">
+    {$footer}
+    <p>Theme by <a href="https://github.com/phit" target="_blank">@phit</a> using <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>
+</footer>
 <script language="JavaScript" type="text/javascript" src="gfx/js/wz_tooltip.js"></script>
 </body>
 </html>

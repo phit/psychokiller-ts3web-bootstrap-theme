@@ -1,42 +1,46 @@
 {if $hoststatus === false AND $serverhost === true}
-<table>
-	<tr>
-		<td class="error">{$lang['nohoster']}</td>
-	</tr>
-</table>
+<div class="col-md-9 col-xs-12">
+    <div class="alert alert-warning">
+        <p>{$lang['error']}: {$lang['nohoster']}</p>
+    </div>
+</div>
 {else}
 {if !empty($error) OR !empty($noerror)}
-<table>
+<div class="col-md-9 col-xs-12">
+    <div class="alert alert-warning">
 	{if !empty($error)}
-	<tr>
-		<td class="error">{$error}</td>
-	</tr>
+        <p>{$error}</p>
 	{/if}
 	{if !empty($noerror)}
-	<tr>
-		<td class="noerror">{$noerror}</td>
-	</tr>
+        <p>{$noerror}</p>
 	{/if}
-</table>
+    </div>
+</div>
 {/if}
-<table class="border" style="width:90%" cellpadding="1" cellspacing="0">
-	<tr>
-		<td class="thead" colspan="4">Instanz Server Backups</td>
-	</tr>
-	<tr>
-		<td style="font-size:12px" colspan="3">{$lang['servbackdesc']}</td>
-	</tr>
-	<tr>
-		<td class="warning" style="font-size:12px" colspan="3">{$lang['snapwarning']}</td>
-	</tr>
-	<tr>
-		<td class="thead" colspan="4">{$lang['serverbackups']}</td>
-	</tr>
-	<tr>
-		<td class="thead">{$lang['created']}</td>
-		<td class="thead">{$lang['server']}</td>
-		<td class="thead">{$lang['options']}</td>
-	</tr>
+<div class="col-md-9 col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Instance Server Backups</h3>
+        </div>
+        <div class="panel-body">
+            <p>{$lang['servbackdesc']}</p>
+            <div class="alert alert-warning">
+                <p>{$lang['snapwarning']}</p>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{$lang['serverbackups']}</h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="thead">{$lang['created']}</td>
+                    <th class="thead">{$lang['server']}</td>
+                    <th class="thead">{$lang['options']}</td>
+                </tr>
+            </thead>
 	{if isset($files[0]) AND !empty($files[0]) OR isset($folder[2]) AND !empty($folder[2])}
 		{if !isset($smarty.post.backupdate)}
 			{foreach key=key item=value from=$folder[2]}
@@ -86,7 +90,7 @@
 			{/foreach}	
 			{else}
 			<tr>
-				<td colspan="3" class="green1 center">No Backups found!</td>
+				<td colspan="3">No Backups found!</td>
 			</tr>
 			{/if}
 		{/if}
@@ -95,17 +99,21 @@
 			<td colspan="3" class="green1 center">No Backups found!</td>
 		</tr>
 	{/if}
-</table>
-<br />
-<table class="border" style="width:90%" cellpadding="1" cellspacing="0">
-	<tr>
-		<td class="thead" colspan="4">{$lang['host']} {$lang['serverbackups']}</td>
-	</tr>
-	<tr>
-		<td class="thead">{$lang['created']}</td>
-		<td class="thead">{$lang['server']}</td>
-		<td class="thead">{$lang['options']}</td>
-	</tr>
+    </table>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{$lang['host']} {$lang['serverbackups']}</h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="thead">{$lang['created']}</td>
+                    <th class="thead">{$lang['server']}</td>
+                    <th class="thead">{$lang['options']}</td>
+                </tr>
+            </thead>
 {if isset($files[1]) AND !empty($files[1]) OR isset($folder[1]) AND !empty($folder[1])}
 	{if !isset($smarty.post.backupdate)}
 		{foreach key=key item=value from=$folder.1}
@@ -167,22 +175,21 @@
 	</tr>
 {/if}
 </table>
-<br />
-<table class="border" cellpadding="1" cellspacing="0">
-<tr>
-	<td class="thead" colspan="3">{$lang['createserverbackup']}</td>
-</tr>
-<tr>
-	<td class="green1 center">
-	<form method="post" action="index.php?site=iserverbackup">
-	<input class="button" type="submit" name="create" value="{$lang['create']}" />
-	</form>
-	</td>
-	<td class="green1 center">
-	<form method="post" action="index.php?site=iserverbackup">
-	<input type="hidden" name="hostbackup" value="1" />
-	<input class="button" type="submit" name="create" value="{$lang['host']} {$lang['create']}" />
-	</td>
-</tr>
-</table>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{$lang['createserverbackup']}</h3>
+        </div>
+        <div class="panel-body">
+            <form method="post" action="index.php?site=iserverbackup">
+                <input class="btn btn-primary" type="submit" name="create" value="{$lang['create']}" />
+            </form>
+            <br>
+            <form method="post" action="index.php?site=iserverbackup">
+                <input type="hidden" name="hostbackup" value="1" />
+                <input class="btn btn-primary" type="submit" name="create" value="{$lang['host']} {$lang['create']}" />
+            </form>
+        </div>
+    </div>
+</div>
 {/if}

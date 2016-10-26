@@ -1,16 +1,14 @@
 {if !empty($error) OR !empty($noerror)}
-<table>
+<div class="col-md-9 col-xs-12">
+    <div class="alert alert-warning">
 	{if !empty($error)}
-	<tr>
-		<td class="error">{$error}</td>
-	</tr>
+        <p>{$error}</p>
 	{/if}
 	{if !empty($noerror)}
-	<tr>
-		<td class="noerror">{$noerror}</td>
-	</tr>
+        <p>{$noerror}</p>
 	{/if}
-</table>
+    </div>
+</div>
 {/if}
 <table class="border" style="width:100%" cellpadding="1" cellspacing="0">
 	<tr>
